@@ -1,9 +1,10 @@
 import React from 'react';
+import "../css/Pics.css";
 
 const Pics = (props) => {
     return(
-      <div>
-        <img src="src/images/blueEyes.jpg" alt="blue face"></img>
+      <div className="pics col s3">
+        <a href="#"><img src={props.image} alt={props.name} /></a>
       </div>
       )
 }

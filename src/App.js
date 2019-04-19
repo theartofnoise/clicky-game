@@ -1,17 +1,29 @@
 import React, { Component } from 'react';
-import './App.css';
+import './css/App.css';
 import Header from './components/Header'
+import Wrapper from './components/Wrapper'
 import Pics from './components/Pics'
+import pics from "./pics.json";
+
 
 class App extends Component {
-  render() {
+  runGame() {
+    console.log("you did it");
+  }
+  state = {
+    pics
+  }
+        render() {
     return (
-      <body>
+        <Wrapper>
         <Header />
-      <div class="container">
-        <Pics />
+      <div className="container">
+      {this.state.pics.map(pic =>(
+        <Pics key={pic.id} image={pic.image} name={pic.name}/>
+        ))}
       </div>
-    </body>
+      </Wrapper>
+    
     );
   }
 }
