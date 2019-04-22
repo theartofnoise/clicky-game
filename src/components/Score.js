@@ -1,8 +1,9 @@
 import React from 'react';
 
 const Score = (props) => {
+    console.log(props)
     return(
-        <div>My Score here</div>
+        <div>Score: {props.data}</div>
         )
 }
 

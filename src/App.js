@@ -6,29 +6,26 @@ import Pics from './components/Pics'
 import pics from "./pics.json";
 
 
+
 class App extends Component {
   
-  constructor(props) {
-    super(props);
-    this.state = {
-      pics
+  state = {
+      pics,
+      score: 0
     }
-    this.onPickClicked = this.onPickClicked.bind(this)
-  }
+
  
   
 
-  onPickClicked(id) {
-    console.log('fuckin a ' + id);
-    this.setState(state => ({
-      pics: this.state.pics
-    }))
+  onPickClicked=(id)=> {
+    console.log('Pic ID ' + id);
+    this.setState({score:this.state.score +1})
   }
 
   render() {
     return (
         <Wrapper>
-        <Header />
+        <Header data={this.state.score} />
       <div className="container">
       
         <Pics picClicked={this.onPickClicked} data={pics} />
