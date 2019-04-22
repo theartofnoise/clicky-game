@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import './css/App.css';
 import Header from './components/Header'
 import Wrapper from './components/Wrapper'
@@ -7,20 +7,32 @@ import pics from "./pics.json";
 
 
 class App extends Component {
-  runGame() {
-    console.log("you did it");
+  
+  constructor(props) {
+    super(props);
+    this.state = {
+      pics
+    }
+    this.onPickClicked = this.onPickClicked.bind(this)
   }
-  state = {
-    pics
+ 
+  
+
+  onPickClicked(id) {
+    console.log('fuckin a ' + id);
+    this.setState(state => ({
+      pics: this.state.pics
+    }))
   }
-        render() {
+
+  render() {
     return (
         <Wrapper>
         <Header />
       <div className="container">
-      {this.state.pics.map(pic =>(
-        <Pics key={pic.id} image={pic.image} name={pic.name}/>
-        ))}
+      
+        <Pics picClicked={this.onPickClicked} data={pics} />
+        
       </div>
       </Wrapper>
     

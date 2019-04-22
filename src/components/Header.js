@@ -6,8 +6,8 @@ const Header = (props) => {
     return(
         <nav>
     <div className="nav-wrapper">
-      <a href="myporfolio.com" className="brand-logo">Clicky-Game</a>
-      <ul id="nav-mobile" className="right hide-on-med-and-down">
+      <a href="myporfolio.com" className="left brand-logo">Clicky-Game</a>
+      <ul id="nav-mobile" className="right">
         <li><a href="sass.html"><Score /></a></li>
         
       </ul>
