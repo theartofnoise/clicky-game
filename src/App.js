@@ -15,22 +15,18 @@ class App extends Component {
       highScore: 0,
       round: 1,
       clickedIds: [],
-      roundScore: 0
+      roundScore: 1
     } 
-
-  
-
   
   gameOver = () => {
-    alert("You suck!!");
     this.setState({
-      highScore: this.state.score,
       score: 0,
-      roundScore: 0,
+      roundScore: 1,
       clickedIds: [],
       round: 1
       
     })
+    alert("You suck!!");
   };
     
   youWin = () => {
@@ -38,7 +34,7 @@ class App extends Component {
       highScore: this.state.score +1,
       round: +1,
       clickedIds: [],
-      roundScore: 0
+      roundScore: 1
 
     })
     alert("You win!!");
@@ -47,25 +43,28 @@ class App extends Component {
     this.setState({
       score: this.state.score +1,
       roundScore: this.state.score +1,
-      highScore: this.state.score +1
     });
+    if (this.state.score > this.state.highScore) {
+      this.setState({
+        highScore: this.state.score
+      })
+    }
     if (this.state.roundScore > 2) {
       this.youWin();
     }
     this.state.clickedIds.push(id)
     console.log(this.state.clickedIds);
-    console.log(this.state.roundScore);
+    console.log(`round score ${this.state.roundScore}`);
   }
+  
 
   onPickClicked=(id)=> {
-    console.log('Pic ID ' + id);
-    // checks to see if pic has alread been clicked
-    this.state.clickedIds.forEach(entry => {
-      if (entry === id) {
-        this.gameOver();
-      }
-    });
-    this.addScore(id);
+    
+    if (this.state.clickedIds.includes(id)) {
+      this.gameOver();
+    }else{
+      this.addScore(id);
+    }
     
   };
 
