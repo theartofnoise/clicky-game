@@ -6,35 +6,35 @@ import Pics from './components/Pics'
 import pics from "./pics.json";
 
 
-
 class App extends Component {
   
   state = {
       pics,
       score: 0,
-      highScore: 0,
+      highScore: localStorage.getItem("localHighScore"),
       round: 1,
       clickedIds: [],
-      roundScore: 1
+      roundScore: 0
     } 
-  
+
+  // game over
   gameOver = () => {
     this.setState({
       score: 0,
-      roundScore: 1,
+      roundScore: 0,
       clickedIds: [],
       round: 1
       
     })
-    alert("You suck!!");
+    alert("Nooooo! You lost!");
   };
-    
+  
+  
   youWin = () => {
     this.setState({
-      highScore: this.state.score +1,
-      round: +1,
+      round: this.state.round +1,
       clickedIds: [],
-      roundScore: 1
+      roundScore: 0
 
     })
     alert("You win!!");
@@ -42,19 +42,22 @@ class App extends Component {
   addScore=(id)=> {    
     this.setState({
       score: this.state.score +1,
-      roundScore: this.state.score +1,
+      roundScore: this.state.roundScore +1,
+      // pics: this.shuffle(this.state.pics)
+    }, ()=> {
+      if (this.state.score > this.state.highScore) {
+        this.setState({
+          highScore: this.state.score
+        })
+      }
+      // puts high score in local storage
+      localStorage.setItem('localHighScore', this.state.score);
+      if (this.state.roundScore === 12) {
+        this.youWin();
+      }
+      this.state.clickedIds.push(id)
+
     });
-    if (this.state.score > this.state.highScore) {
-      this.setState({
-        highScore: this.state.score
-      })
-    }
-    if (this.state.roundScore > 2) {
-      this.youWin();
-    }
-    this.state.clickedIds.push(id)
-    console.log(this.state.clickedIds);
-    console.log(`round score ${this.state.roundScore}`);
   }
   
 

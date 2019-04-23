@@ -9,6 +9,7 @@ const Header = (props) => {
       <a href="myporfolio.com" className="left brand-logo">Clicky-Game</a>
       <ul id="nav-mobile" className="right">
         <li>
+          {/* my little score card here */}
           <Score 
           score={props.score} 
           highScore={props.highScore} 
