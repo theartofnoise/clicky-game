@@ -2,12 +2,12 @@
     {
         "id": 1,
         "name": "blueEyes",
-        "image":"images/blueEyes.jpg",
+        "image":"clicky-game/images/blueEyes.jpg",
         "clicked": false
       },{
         "id": 2,
         "name": "blue face",
-        "image":"/images/blue.png",
+        "image":"clicky-game/images/blue.png",
         "clicked": false
       },{
         "id": 3,
