@@ -2,22 +2,22 @@
     {
         "id": 1,
         "name": "blueEyes",
-        "image":"https://theartofnoise.github.io/clicky-game/images/blueEyes.jpg",
+        "image":"images/blueEyes.jpg",
         "clicked": false
       },{
         "id": 2,
         "name": "blue face",
-        "image":"https://theartofnoise.github.io/clicky-game/images/blue.png",
+        "image":"/images/blue.png",
         "clicked": false
       },{
         "id": 3,
         "name": "Muliple Sponge Bobs",
-        "image":"https://theartofnoise.github.io/clicky-game/images/bobBobBob.png",
+        "image":"clicky-game/images/bobBobBob.png",
         "clicked": false
       },{
         "id": 4,
         "name": "cartoon cat",
-        "image":"https://theartofnoise.github.io/clicky-game/images/cat.jpg",
+        "image":"/clicky-game/images/cat.jpg",
         "clicked": false
       },{
         "id": 5,
