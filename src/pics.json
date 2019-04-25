@@ -2,17 +2,17 @@
     {
         "id": 1,
         "name": "blueEyes",
-        "image":"clicky-game/images/blueEyes.jpg",
+        "image":"/clicky-game/images/blueEyes.jpg",
         "clicked": false
       },{
         "id": 2,
         "name": "blue face",
-        "image":"clicky-game/images/blue.png",
+        "image":"/clicky-game/images/blue.png",
         "clicked": false
       },{
         "id": 3,
         "name": "Muliple Sponge Bobs",
-        "image":"clicky-game/images/bobBobBob.png",
+        "image":"/clicky-game/images/bobBobBob.png",
         "clicked": false
       },{
         "id": 4,
